@@ -1,0 +1,11 @@
+Jest to solucja składająca się z tylko z 5 projektów, aplikacji WPF(.NET Framwerok), własnej  biblioteki(.Net Framework), testów(NUnit), usługi(Windows Service) oraz instalatora.
+Z poziomu aplikacji można:
+   -włączyć lub wyłączyć usługę,
+   -wybrać folder lub plik do "śledzenia" czyli do ustawienia na  niego watchera.(wybiera się to poprzez modalne okno dialogowe, w  którym można także stworzyć nowy plik lub folder)
+   -włączyć watcher na pliki lub go wyłączyć.
+Śledzenie odbywa się dwu etapowo, na ekranie aplikacji wyświetlają się  zmiany, ale także do usługi zostaje wysłany na odpowiedni endpoint  zapytanie Http, które zawiera ścieżkę do śledzonego pliku/folderu.  Usługa zaczyna wtedy raportować wszystkie zmiany do dziennika zdarzeń.  Mamy do niego podgląd z poziomu aplikacji. Wysłanie kolejnego  specjalnego zapytania powoduje, że usługa przestaje śledzić wybrany  wcześniej folderu udało mi się to przy zastosowaniu wzorca  projektowego singleton service.
+Śledzenie folderu polega na raportowaniu dodania, usunięcia, zmiany  nazwy oraz samej informacji, że plik się zmienił.
+Śledzenie pliku polega na raportowaniu jakie linijki zostały w nim  dodane(+) lub usunięte(-), można śledzić tylko pliki .txt, jest to  możliwe dzięki wykorzystaniu zestawu DiffMatchPatch.
+Biblioteka zawiera "logikę" watcherów dzięki czemu jest używana  zarówno w usłudze jak i w aplikacji WPF.
+plików konfiguracyjnych używam do przechowywania nazwy oraz źródła  dziennika zdarzeń, endpointów, oraz nazwy usługi.
+Cały interfejs użytkownika jest też przygotowany w taki sposób, że  odpowiednie przyciski się blokują kiedy użytkownik, dzięki  czemu unikam nieprzewidzianych sytuacji i błędów.
