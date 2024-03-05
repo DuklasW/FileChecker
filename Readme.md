@@ -1,5 +1,4 @@
-#FileChecker
-
+# FileChecker
 
 ## Opis Projektu
 
