@@ -3,17 +3,13 @@
 
 ## Opis Projektu
 
-Jest to solucja składająca się z 5 projektów:
+FileChecker to solucja składająca się z różnych projektów, która umożliwia monitorowanie i analizę zmian w plikach oraz folderach systemu plików. Składa się z 5 głównych projektów:
 
-- Aplikacja WPF (.NET Framework)
-- Własna biblioteka (.NET Framework)
-- Testy (NUnit)
-- Usługa (Windows Service)
-- Instalator
-
-## Instalacja
-1. Skompiluj projekt w środowisku Visual Studio.
-2. Uruchom projekt instalatora, aby zainstalować usługę na systemie Windows.
+1. Aplikacja WPF (.NET Framework) - Interfejs użytkownika umożliwiający zarządzanie monitorowaniem i analizą plików i folderów.
+2. Własna biblioteka (.NET Framework) - Biblioteka zawierająca logikę monitorowania zmian w plikach i folderach, używana zarówno przez aplikację WPF, jak i usługę Windows.
+3. Testy (NUnit) - Projekt zawierający testy jednostkowe do sprawdzania poprawności działania funkcji monitorowania.
+4. Usługa (Windows Service) - Usługa Windows, która działa w tle i obsługuje monitorowanie zmian w plikach i folderach.
+5. Instalator - Narzędzie instalacyjne służące do instalacji usługi na systemie Windows.
 
 ## Funkcjonalności:
 
@@ -37,6 +33,10 @@ Jest to solucja składająca się z 5 projektów:
 - Biblioteka zawiera "logikę" watcherów, dzięki czemu jest używana zarówno w usłudze, jak i w aplikacji WPF.
 - Pliki konfiguracyjne są używane do przechowywania nazwy oraz źródła dziennika zdarzeń, endpointów oraz nazwy usługi.
 - Interfejs użytkownika jest przygotowany w taki sposób, że odpowiednie przyciski blokują się, gdy użytkownik działa, co minimalizuje błędy.
+
+## Instalacja
+1. Skompiluj projekt w środowisku Visual Studio.
+2. Uruchom projekt instalatora, aby zainstalować usługę na systemie Windows.
 
 ## Autor
 Autor: Wojciech Duklas
